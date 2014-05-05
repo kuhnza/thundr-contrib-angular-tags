@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+		<groupId>com.threewks.thundr</groupId>
+		<artifactId>thundr-parent</artifactId>
+		<version>3</version>
+	</parent>
+
+	<artifactId>thundr-angular-tags</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>thundr-angular-tags</name>
+	<description>A Thundr module providing helpful templating tags for use with Angular JS</description>
+	<url>http://3wks.github.com/thundr/</url>
+
+	<organization>
+		<name>3wks</name>
+		<url>http://www.3wks.com.au</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>kuhnza</id>
+			<name>Dave Kuhn</name>
+			<email>dave@3wks.com.au</email>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:https://github.com/kuhnza/${project.name}</connection>
+		<developerConnection>scm:git:https://github.com/kuhnza/${project.name}</developerConnection>
+		<url>https://github.com/kuhnza/${project.name}</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<thundr.version>1.0.0</thundr.version>
+	</properties>
+
+	<dependencies>
+		<!-- Library Dependencies -->
+		<dependency>
+			<groupId>com.threewks.thundr</groupId>
+			<artifactId>thundr</artifactId>
+			<version>${thundr.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.2.4</version>
+			<scope>compile</scope>
+		</dependency>
+
+		<!-- Servlet Dependencies -->
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.2.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.el</groupId>
+			<artifactId>javax.el-api</artifactId>
+			<version>2.2.4</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Test Dependencies -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>1.3</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.9.5</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- Run Unit tests with surefire -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.13</version>
+			</plugin>
+
+			<!-- Run Integration tests with Failsafe -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>2.12</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modelVersion>4.0.0</modelVersion>
+</project>
