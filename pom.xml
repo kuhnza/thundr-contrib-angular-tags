@@ -6,10 +6,10 @@
 		<version>3</version>
 	</parent>
 
-	<artifactId>thundr-angular-tags</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<artifactId>thundr-contrib-angular-tags</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>thundr-angular-tags</name>
+	<name>thundr-contrib-angular-tags</name>
 	<description>A Thundr module providing helpful templating tags for use with Angular JS</description>
 	<url>http://3wks.github.com/thundr/</url>
 
@@ -35,7 +35,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<thundr.version>1.0.0</thundr.version>
+		<thundr.version>1.1.0</thundr.version>
 	</properties>
 
 	<dependencies>

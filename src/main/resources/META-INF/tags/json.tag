@@ -17,13 +17,14 @@
     limitations under the License.
 
 --%>
-<%@ tag import="com.google.gson.GsonBuilder" %>
+<%@ tag import="com.threewks.thundr.json.GsonSupport" %>
 <%@ tag body-content="empty" description=""%>
 <%@ attribute name="value" required="true" type="java.lang.Object" description="Object to convert to JSON." %>
 <%@ attribute name="gson" required="false" type="com.google.gson.Gson" description="Override the default Gson instance to perform the JSON conversion with" %>
 <%
 	if (gson == null) {
-		gson = new GsonBuilder().setPrettyPrinting().create();
+		gson = GsonSupport.createBasicGsonBuilder()
+				.setPrettyPrinting().create();
 	}
 	out.print(gson.toJson(value));
 %>
