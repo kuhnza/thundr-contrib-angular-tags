@@ -38,7 +38,7 @@ angular.module('${module}').factory('${name}', ['$http', function ($http) {
 			token = match[0];
 			varName = match[1];
 			varValue = vars[varName];
-			if (!varValue) throw new err;
+			if (!varValue) throw err;
 			path = path.replace(token, varValue);
 		}
 		return path;
