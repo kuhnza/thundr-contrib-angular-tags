@@ -58,7 +58,7 @@ angular.module('${module}').factory('${name}', ['$http', function ($http) {
 		<c:set var="route" value="${entry.value}"/>
 		'${name}': function(config) {
 			var path = reverse('${entry.value.route}', config.pathVars);
-			return makeRequest(path, '${entry.value.routeType}', config);
+			return makeRequest(path, '${entry.value.method}', config);
 		}<c:if test="${!loop.last}">,</c:if>
 	</c:forEach>
 	}

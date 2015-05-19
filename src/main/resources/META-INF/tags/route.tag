@@ -20,7 +20,7 @@
 <%@ tag body-content="empty" description=""%>
 <%@ tag import="com.threewks.thundr.route.RouteNotFoundException"%>
 <%@ tag import="java.util.Map"%>
-<%@ tag import="com.threewks.thundr.route.Routes"%>
+<%@ tag import="com.threewks.thundr.route.Router"%>
 <%@ tag import="com.threewks.thundr.route.Route"%>
 
 <%@ attribute name="module" required="true" type="java.lang.String" description="The Angular module to assign the constant to." %>
@@ -31,10 +31,10 @@
 <%
 	JspContext context = getJspContext();
 	Map<String, Object> pathVars = (Map<String, Object>) context.getAttribute("pathVars", PageContext.PAGE_SCOPE);
-	Routes routes = (Routes) request.getAttribute("routes");
-	Route r = routes.getRoute(route);
+	Router router = (Router) request.getAttribute("router");
+	Route r = router.getNamedRoute(route);
 	if (r == null) {
-		throw new RouteNotFoundException("No route named %s exists", name);
+		throw new RouteNotFoundException("No route named %s exists", route);
 	}
 	context.setAttribute("reverse", r.getReverseRoute(pathVars));
 %>
