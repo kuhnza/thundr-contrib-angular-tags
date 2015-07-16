@@ -36,6 +36,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<thundr.version>2.0.2</thundr.version>
+		<project.scm.id>github</project.scm.id> <!-- Supply credentials via settings.xml -->
 	</properties>
 
 	<dependencies>
